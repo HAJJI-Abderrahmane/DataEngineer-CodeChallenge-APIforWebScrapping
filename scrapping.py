@@ -49,8 +49,8 @@ def getattr(link):
 	return authors,standfirst,datepublished
 
 def scrappages(startpage,endpage):
-	scapeddata=[]
-	for i in range(1,7):
+	scrapeddata=[]
+	for i in range(startpage,endpage+1):
 		print("Page : "+str(i))
 		links,headers=getlinksfrompage(i)
 		d={}
@@ -61,6 +61,6 @@ def scrappages(startpage,endpage):
 			d["Standfirst"]=standfirst
 			d["datepublished"]=datepublished
 			d["url"]=link
-		scapeddata.append(d)
+			scrapeddata.append(d)
 	return scrapeddata
 
