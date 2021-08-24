@@ -24,7 +24,6 @@ def getlinksfrompage(pagenumber):
 
 ######Getting the needed attributes from the link
 def getattr(link):
-
 	page = requests.get(link)			#Getting the html text
 	soup = BS(page.text, 'html.parser')
 	######Getting authors
@@ -48,19 +47,23 @@ def getattr(link):
 		datepublished=datepublishedTIME["datetime"]
 	return authors,standfirst,datepublished
 
-def scrappages(startpage,endpage):
+def scrapepages(startpage,endpage):
 	scrapeddata=[]
 	for i in range(startpage,endpage+1):
 		print("Page : "+str(i))
 		links,headers=getlinksfrompage(i)
-		d={}
+		dicte={}
 		for idx,link in enumerate(links):
+			# print(link)
 			authors,standfirst,datepublished=getattr(link)
-			d["Headline"]=headers[idx]
-			d["Author"]=authors
-			d["Standfirst"]=standfirst
-			d["datepublished"]=datepublished
-			d["url"]=link
-			scrapeddata.append(d)
+			dicte["Headline"]=headers[idx]
+			dicte["Author"]=authors
+			dicte["Standfirst"]=standfirst
+			dicte["datepublished"]=datepublished
+			dicte["url"]=link
+			# print(d)
+
+			scrapeddata.append(dicte.copy())
+			# yield dicte
 	return scrapeddata
 
