@@ -24,7 +24,6 @@ cssselect==1.1.0
 dataclasses==0.8
 distro==1.6.0
 dnspython==2.1.0
-docker==4.4.4
 dotnetcore2==2.1.21
 Flask==1.1.1
 flatbuffers==1.12
@@ -77,13 +76,11 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
 PyDispatcher==2.0.5
-pygame==2.0.1
 PyJWT==2.1.0
 pymongo==3.10.1
 pyOpenSSL==20.0.1
 python-dateutil==2.8.2
 pytz==2021.1
-pywin32==227
 queuelib==1.6.1
 requests==2.26.0
 requests-oauthlib==1.3.0

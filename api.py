@@ -44,6 +44,6 @@ def api_model():
 atexit.register(lambda: scheduler.shutdown())
 
 if __name__ == '__main__':
-    app.run(debug=False, threaded=False,host="0.0.0.0",port=3000)
+    app.run(debug=False, threaded=False,host="0.0.0.0",port=3333)
 
 
